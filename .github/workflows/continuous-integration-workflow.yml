@@ -38,3 +38,6 @@ jobs:
         context: .
         push: true
         tags: agib1/dotnettemplate:${{github.ref_name}}
+
+    - name: deploy image to web app
+      run: curl -dH -X POST '${{secrets.AZURE_WEBHOOK}}'
